@@ -1,0 +1,208 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menú Digital</title>
+    <link rel="stylesheet" href="styles.css?v=2.3">
+    
+       <!-- Open Graph -->
+<meta property="og:title" content="Menú Digital">
+<meta property="og:description" content="Visita nuestro catálogo y conoce nuestros productos.">
+<meta property="og:image" content="https://muestracliente.impacta100.com/restaurante1/imagenes1/combo-voraz.jpg">
+<meta property="og:url" content="https://muestracliente.impacta100.com/restaurante/menu.html">
+<meta property="og:type" content="Catálogo de productos">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link rel="icon" href="https://hamburgo1718.com/imagenes1/logo-hamburgo.jpg" type="image/jpeg">
+  <!-- Fin del Favicons -->
+    
+</head>
+<body>
+    <div class="banner">
+        <video autoplay muted loop class="banner-video">
+            <source src="videos/video1.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+        <img src="https://muestracliente.impacta100.com/restaurante/imagenes1/logo-hamburgo.jpg" alt="Logo del restaurante" class="logo">
+        <h1 class="restaurant-name">HAMBURGO 1718 </h1>
+        <button id="ver-mas-btn" class="ver-mas-btn">Ver más</button>
+    
+        <!-- Todo el contenido que se muestra/oculta debe estar dentro de este div -->
+        <div id="expanded-content" class="expanded-content">
+            <div class="contact-info">
+                <span class="contact-capsule phone">
+                    <i class="fas fa-phone"></i> 3133162581
+                </span>
+                <span class="contact-capsule email">
+                    <i class="fas fa-envelope"></i> juanmesa269@gmail.com
+                </span>
+            </div>
+            <div class="social-icons">
+               <!-- <a href="https://facebook.com/deliciousbites"><i class="fab fa-facebook"></i></a> -->
+                <a href="https://www.instagram.com/hamburgo1718?igsh=MWI0cjF6N291MXR4aw=="><i class="fab fa-instagram"></i></a>
+                <!-- <a href="https://twitter.com/deliciousbites"><i class="fab fa-twitter"></i></a> -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu-header">
+        <div class="categories">
+            <select id="category-select" class="category-dropdown">
+    <option value="" disabled selected>¿Categorías de Menú Aquí...?</option>
+    <option value="combos">Combos</option>
+    <option value="hamburguesas">Hamburguesas</option>
+    <option value="hotdog">Hotdog</option>
+    <option value="papas">Papas</option>
+    <option value="pinchos">Pinchos</option>
+<!--<option value="bebidas">Bebidas</option>-->
+</select>
+        </div>
+        <div class="icons">
+            <div class="icon-container">
+                <button class="icon" id="cart-icon" title="Ver carrito de compras">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-indicator" id="cart-indicator">0</span>
+                </button>
+                <span class="icon-label">Carrito</span>
+            </div>
+            <div class="icon-container">
+                <button class="icon" id="qr-icon" title="Generar código QR del menú"><i class="fas fa-qrcode"></i></button>
+                <span class="icon-label">QR</span>
+            </div>
+           <!-- <div class="icon-container">
+                <button class="icon" id="waiter-icon" title="Llamar al camarero"><i class="fas fa-bell"></i></button>
+                <span class="icon-label">Camarero</span>
+            </div> -->
+            <div class="icon-container">
+                <button class="icon" id="share-icon" title="Compartir este menú"><i class="fas fa-share-alt"></i></button>
+                <span class="icon-label">Compartir</span>
+            </div>
+        </div>
+    </div>
+    <div class="products-grid" id="products-container">
+        <!-- Products will be dynamically added here -->
+    </div>
+    <div class="cart" id="cart">
+        <div class="cart-header">
+            <h2>Carrito</h2>
+            <div class="cart-close" id="cart-close">&times;</div>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total" id="cart-total">Total: $0</div>
+        <div class="delivery-method">
+            <h3>Seleccionar la sede mas cercana:</h3>
+            <select id="branch-select">
+                <option value="" disabled selected>Seleccione tu sede</option>
+               <!-- <option value="573203670384">Sede de Prueba</option> -->
+                <option value="573105627750">Sede Cabecera</option>
+                <option value="573142017203">Sede Acrópolis</option>
+                <option value="573244317556">Sede La Florida</option>
+                <option value="573138936637">Sede Puente San Gil</option>
+                <option value="573219212195">Sede Cabecera La Fuente</option>
+                <option value="573143658076">Sede San Juan Girón </option>
+            </select>
+        </div>
+        <div class="delivery-method">
+            <h3>Método de entrega:</h3>
+            <select id="delivery-method">
+                <option value="" disabled selected>Seleccionar método de entrega</option>
+                <option value="store">Retirar en tienda</option>
+                <option value="delivery">Domicilio</option>
+                <!--<option value="table">Pedir en mesa</option>-->
+            </select>
+        </div>
+        <div class="delivery-form" id="delivery-form">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="additional-info">Información adicional:</label>
+                <textarea id="additional-info"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="return-amount">Vuelta de:</label>
+                <input type="number" id="return-amount" placeholder="Ingrese el monto para la vuelta">
+            </div>
+            
+        </div>
+        <div class="store-pickup-form" id="store-pickup-form" style="display: none;">
+            <div class="form-group">
+                <label for="pickup-name">Nombre de quien retira:</label>
+                <input type="text" id="pickup-name" required>
+            </div>
+            <div class="form-group">
+                <label for="pickup-time">Hora de recogida:</label>
+                <select id="pickup-time"></select>
+            </div>
+        </div>
+        <div class="table-form" id="table-form" style="display: none;">
+            <div class="form-group">
+                <label for="table-number-select">Número de mesa:</label>
+                <select id="table-number-select">
+                    <option value="1">Mesa 1</option>
+                    <option value="2">Mesa 2</option>
+                    <option value="3">Mesa 3</option>
+                    <option value="4">Mesa 4</option>
+                    <option value="5">Mesa 5</option>
+                </select>
+            </div>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Finalizar compra</button>
+    </div>
+    <div id="qr-popup" class="qr-popup">
+        <div class="qr-content">
+            <div id="qr-code"></div>
+            <button id="download-qr">Descargar QR</button>
+            <button id="close-qr">Cerrar</button>
+        </div>
+    </div>
+    <div id="waiter-popup" class="popup">
+        <div class="popup-content">
+            <h3>Avisar al Camarero</h3>
+            <p>Seleccione el número de mesa:</p>
+            <select id="table-number">
+                <option value="1">Mesa 1</option>
+                <option value="2">Mesa 2</option>
+                <option value="3">Mesa 3</option>
+                <option value="4">Mesa 4</option>
+                <option value="5">Mesa 5</option>
+            </select>
+            <button id="call-waiter">Avisar al Camarero</button>
+            <button id="close-waiter-popup">Cerrar</button>
+        </div>
+    </div>
+    <div class="share-popup" id="share-popup" style="display: none;">
+        <div class="share-content">
+            <h3>Compartir Menú</h3>
+            <button id="share-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+            <button id="share-facebook"><i class="fab fa-facebook"></i> Facebook</button>
+            <button id="share-twitter"><i class="fab fa-twitter"></i> Twitter</button>
+            <button id="share-copy"><i class="fas fa-copy"></i> Copiar enlace</button>
+            <button id="close-share">Cerrar</button>
+        </div>
+    </div>
+    <footer>
+        <p><strong>Hamburgo 1718</strong></p>
+        <p>Este Menú online fue creada por <a href="https://impacta100.com" target="_blank">Impacta 100 People</a></p>
+        <p>© 2024 - 2025 Todos los derechos reservados.</p>
+        <img src="https://impacta100.com/wp-content/uploads/2024/01/LOGO-BLANCO-VERDE-PRINCIPAL.png" alt="Impacta 100 Logo" class="footer-logo">
+    </footer>
+   
+     <script src="script.js?v=1.9"></script>
+</body>
+</html>

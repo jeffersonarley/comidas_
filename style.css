@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 0;
+}
+
+/* Padre general */
+.contenedor {
+  width: 100%;
+  min-height: 100vh;      /* ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column; /* header arriba, fondo abajo */
+}
+
+/* Encabezado */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  background-color: #faebd6;
+  box-sizing: border-box;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+/* Ubicación */
+.location {
+  font-size: 14px;
+}
+
+.location strong {
+  font-weight: bold;
+}
+
+.location .icon {
+  color: orange;
+  margin-left: 5px;
+}
+
+/* Barra de búsqueda */
+.search {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px;
+}
+
+.search .icon {
+  color: orange;
+  margin-right: 5px;
+}
+
+/* Botón acceso */
+.login {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  color: orange;
+  cursor: pointer;
+}
+
+/* Fondo */
+.fondo {
+  position: relative;
+  width: 100%;
+  height: 120vh;   /* ⬅️ aquí controlas el largo */
+  overflow: hidden;
+}
+
+.fondo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* se adapta al div sin deformarse */
+  display: block;
+}
+
+
+/* Logo encima del fondo */
+.logos {
+  position: absolute;
+  top: 30%;              /* baja el logo al centro vertical */
+  left: 50%;             /* mueve el logo al centro horizontal */
+  transform: translate(-50%, -50%); /* lo centra exacto */
+}
+
+.logos img {
+  width: 800px;   /* ajusta tamaño del logo */
+  height: auto;
+}
+.cards {
+  position: absolute;    /* Se posicionan encima del fondo */
+  bottom: 150px;          /* Distancia desde abajo */
+  left: 50%;             /* Centrado horizontal */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  transition: transform 0.3s ease;
+
+
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 20px;
+  width: 220px;
+  transition: transform 0.3s;
+}
+.fondo img {
+  width: 100%;
+  height: auto;   /* respeta proporciones */
+  object-fit: contain;
+}
