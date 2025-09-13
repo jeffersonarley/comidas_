@@ -1,208 +1,80 @@
-<html>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Menú Digital</title>
-    <link rel="stylesheet" href="hamburguesa.css">
-    
-       <!-- Open Graph -->
-<meta property="og:title" content="Menú Digital">
-<meta property="og:description" content="Visita nuestro catálogo y conoce nuestros productos.">
-<meta property="og:image" content="https://muestracliente.impacta100.com/restaurante1/imagenes1/combo-voraz.jpg">
-<meta property="og:url" content="https://muestracliente.impacta100.com/restaurante/menu.html">
-<meta property="og:type" content="Catálogo de productos">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    
-    <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link rel="icon" href="https://hamburgo1718.com/imagenes1/logo-hamburgo.jpg" type="image/jpeg">
-  <!-- Fin del Favicons -->
-    
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salchipapas</title>
+  <!-- Aquí enlazamos el CSS -->
+  <link rel="stylesheet" href="hamburguesa.css">
 </head>
 <body>
-    <div class="banner">
-        <video autoplay muted loop class="banner-video">
-            <source src="videos/video1.mp4" type="video/mp4">
-            Tu navegador no soporta el elemento de video.
-        </video>
-        <img src="https://muestracliente.impacta100.com/restaurante/imagenes1/logo-hamburgo.jpg" alt="Logo del restaurante" class="logo">
-        <h1 class="restaurant-name">HAMBURGO 1718 </h1>
-        <button id="ver-mas-btn" class="ver-mas-btn">Ver más</button>
+  
+   <header>
+    <h1>hamburguesas</h1>
+    <p>¡Disfruta del sabor más fresco y natural!</p>
+  </header>
+ 
+
+  <!-- Intro -->
+  <section class="intro">
+    <h2>Ponle sabor a tu día</h2>
+    <p> ¡Prueba la explosión de sabor en cada mordisco!</p>
+  </section>
+
+    <!-- Cards hamburguesas -->
+    <div class="cards">
+  <div class="card">
+    <img src="https://www.serargentino.com/public/images/2021/01/16109941330-17-burger-773x458.jpg" alt="Salchipapa Clásica">
+    <h3>Clásica</h3>
+    <p>pan suave, carne jugosa, queso cheddar fundido, lechuga fresca y tomate. ¡Un clásico que nunca falla!.</p>
+    <a href="#" class="btn">$15.000</a>
+  </div>
+
+  <div class="card">
+    <img src="https://chefeel.com/chefgeneralfiles/2021/07/front-view-burger-on-stand-scaled.jpg" alt="Salchipapa BBQ">
+    <h3>BBQ</h3>
+    <p> Una combinación irresistible de carne a la parrilla, cebolla caramelizada, queso derretido y nuestra salsa barbacoa ahumada. ¡Sabor que enamora!</p>
+    <a href="#" class="btn">$20.000</a>
+  </div>
+
+  <div class="card">
+    <img src="https://img.freepik.com/fotos-premium/hamburguesa-doble-carne-cebolla-caramelizada-plato-negro-sobre-fondo-llamas_126277-1715.jpg" alt="Salchipapa Mixta">
+    <h3>doble</h3>
+    <p>Dos carnes premium de res, queso cheddar extra, lechuga fresca y tomate en pan artesanal. ¡El doble de sabor!.</p>
+    <a href="#" class="btn">$27.000</a>
+  </div>
+
+  <div class="card">
+    <img src="https://www.conasi.eu/blog/wp-content/uploads/2022/05/hamburguesa-vegana-1.jpg" alt="Salchipapa Veggie">
+    <h3>Veggie</h3>
+    <p> Una opción fresca y saludable con garbanzos, vegetales salteados, aguacate cremoso y salsa casera. ¡Ligera, nutritiva y llena de sabor!</p>
+    <a href="#" class="btn">$22.000</a>
+  </div>
+  <div class="card">
+    <img src="https://www.hola.com/horizon/landscape/aab0370ef079-burguer-pollo-adob-t.jpg" alt="Salchipapa Veggie">
+    <h3>pollo</h3>
+    <p> Crujiente por fuera y jugoso por dentro: pechuga de pollo empanizada, lechuga fresca, tomate y salsa especial en pan artesanal. ¡Un favorito del público!</p>
+    <a href="#" class="btn">$26.000</a>
+  </div>
+  <div class="card">
+    <img src="https://cdn.aarp.net/content/dam/aarp/food/recipes/2016/06/1140-cuban-style-pork-burger-esp.jpg" alt="Salchipapa Veggie">
+    <h3>cerdo</h3>
+    <p> Carne de cerdo desmechada, marinada y bañada en salsa barbacoa, acompañada de ensalada fresca y pan suave. ¡Un festín de sabor ahumado!</p>
+    <a href="#" class="btn">$27.000</a>
+  </div>
+</div>
     
-        <!-- Todo el contenido que se muestra/oculta debe estar dentro de este div -->
-        <div id="expanded-content" class="expanded-content">
-            <div class="contact-info">
-                <span class="contact-capsule phone">
-                    <i class="fas fa-phone"></i> 3133162581
-                </span>
-                <span class="contact-capsule email">
-                    <i class="fas fa-envelope"></i> juanmesa269@gmail.com
-                </span>
-            </div>
-            <div class="social-icons">
-               <!-- <a href="https://facebook.com/deliciousbites"><i class="fab fa-facebook"></i></a> -->
-                <a href="https://www.instagram.com/hamburgo1718?igsh=MWI0cjF6N291MXR4aw=="><i class="fab fa-instagram"></i></a>
-                <!-- <a href="https://twitter.com/deliciousbites"><i class="fab fa-twitter"></i></a> -->
-            </div>
-        </div>
-    </div>
-    
-    <div class="menu-header">
-        <div class="categories">
-            <select id="category-select" class="category-dropdown">
-    <option value="" disabled selected>¿Categorías de Menú Aquí...?</option>
-    <option value="combos">Combos</option>
-    <option value="hamburguesas">Hamburguesas</option>
-    <option value="hotdog">Hotdog</option>
-    <option value="papas">Papas</option>
-    <option value="pinchos">Pinchos</option>
-<!--<option value="bebidas">Bebidas</option>-->
-</select>
-        </div>
-        <div class="icons">
-            <div class="icon-container">
-                <button class="icon" id="cart-icon" title="Ver carrito de compras">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-indicator" id="cart-indicator">0</span>
-                </button>
-                <span class="icon-label">Carrito</span>
-            </div>
-            <div class="icon-container">
-                <button class="icon" id="qr-icon" title="Generar código QR del menú"><i class="fas fa-qrcode"></i></button>
-                <span class="icon-label">QR</span>
-            </div>
-           <!-- <div class="icon-container">
-                <button class="icon" id="waiter-icon" title="Llamar al camarero"><i class="fas fa-bell"></i></button>
-                <span class="icon-label">Camarero</span>
-            </div> -->
-            <div class="icon-container">
-                <button class="icon" id="share-icon" title="Compartir este menú"><i class="fas fa-share-alt"></i></button>
-                <span class="icon-label">Compartir</span>
-            </div>
-        </div>
-    </div>
-    <div class="products-grid" id="products-container">
-        <!-- Products will be dynamically added here -->
-    </div>
-    <div class="cart" id="cart">
-        <div class="cart-header">
-            <h2>Carrito</h2>
-            <div class="cart-close" id="cart-close">&times;</div>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- Cart items will be dynamically added here -->
-        </div>
-        <div class="cart-total" id="cart-total">Total: $0</div>
-        <div class="delivery-method">
-            <h3>Seleccionar la sede mas cercana:</h3>
-            <select id="branch-select">
-                <option value="" disabled selected>Seleccione tu sede</option>
-               <!-- <option value="573203670384">Sede de Prueba</option> -->
-                <option value="573105627750">Sede Cabecera</option>
-                <option value="573142017203">Sede Acrópolis</option>
-                <option value="573244317556">Sede La Florida</option>
-                <option value="573138936637">Sede Puente San Gil</option>
-                <option value="573219212195">Sede Cabecera La Fuente</option>
-                <option value="573143658076">Sede San Juan Girón </option>
-            </select>
-        </div>
-        <div class="delivery-method">
-            <h3>Método de entrega:</h3>
-            <select id="delivery-method">
-                <option value="" disabled selected>Seleccionar método de entrega</option>
-                <option value="store">Retirar en tienda</option>
-                <option value="delivery">Domicilio</option>
-                <!--<option value="table">Pedir en mesa</option>-->
-            </select>
-        </div>
-        <div class="delivery-form" id="delivery-form">
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="address">Dirección:</label>
-                <input type="text" id="address" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="additional-info">Información adicional:</label>
-                <textarea id="additional-info"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="return-amount">Vuelta de:</label>
-                <input type="number" id="return-amount" placeholder="Ingrese el monto para la vuelta">
-            </div>
-            
-        </div>
-        <div class="store-pickup-form" id="store-pickup-form" style="display: none;">
-            <div class="form-group">
-                <label for="pickup-name">Nombre de quien retira:</label>
-                <input type="text" id="pickup-name" required>
-            </div>
-            <div class="form-group">
-                <label for="pickup-time">Hora de recogida:</label>
-                <select id="pickup-time"></select>
-            </div>
-        </div>
-        <div class="table-form" id="table-form" style="display: none;">
-            <div class="form-group">
-                <label for="table-number-select">Número de mesa:</label>
-                <select id="table-number-select">
-                    <option value="1">Mesa 1</option>
-                    <option value="2">Mesa 2</option>
-                    <option value="3">Mesa 3</option>
-                    <option value="4">Mesa 4</option>
-                    <option value="5">Mesa 5</option>
-                </select>
-            </div>
-        </div>
-        <button class="checkout-btn" id="checkout-btn">Finalizar compra</button>
-    </div>
-    <div id="qr-popup" class="qr-popup">
-        <div class="qr-content">
-            <div id="qr-code"></div>
-            <button id="download-qr">Descargar QR</button>
-            <button id="close-qr">Cerrar</button>
-        </div>
-    </div>
-    <div id="waiter-popup" class="popup">
-        <div class="popup-content">
-            <h3>Avisar al Camarero</h3>
-            <p>Seleccione el número de mesa:</p>
-            <select id="table-number">
-                <option value="1">Mesa 1</option>
-                <option value="2">Mesa 2</option>
-                <option value="3">Mesa 3</option>
-                <option value="4">Mesa 4</option>
-                <option value="5">Mesa 5</option>
-            </select>
-            <button id="call-waiter">Avisar al Camarero</button>
-            <button id="close-waiter-popup">Cerrar</button>
-        </div>
-    </div>
-    <div class="share-popup" id="share-popup" style="display: none;">
-        <div class="share-content">
-            <h3>Compartir Menú</h3>
-            <button id="share-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
-            <button id="share-facebook"><i class="fab fa-facebook"></i> Facebook</button>
-            <button id="share-twitter"><i class="fab fa-twitter"></i> Twitter</button>
-            <button id="share-copy"><i class="fas fa-copy"></i> Copiar enlace</button>
-            <button id="close-share">Cerrar</button>
-        </div>
-    </div>
-    <footer>
-        <p><strong>Hamburgo 1718</strong></p>
-        <p>Este Menú online fue creada por <a href="https://impacta100.com" target="_blank">Impacta 100 People</a></p>
-        <p>© 2024 - 2025 Todos los derechos reservados.</p>
-        <img src="https://impacta100.com/wp-content/uploads/2024/01/LOGO-BLANCO-VERDE-PRINCIPAL.png" alt="Impacta 100 Logo" class="footer-logo">
-    </footer>
-   
-     <script src="script.js?v=1.9"></script>
+</div>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>📞 Contáctanos: 300 000 0000 | 📧 jorlan.comidas.com</p>
+    <p>&copy; 2025 JORLAN</p>
+  </footer>
+
+      
+
 </body>
 </html>
