@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodwaGon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Fondo animado de partículas -->
+  <canvas id="particles-bg"></canvas>
+
+  <div class="contenedor">
+    <header>
+      <div class="logo">
+        <img src="img/logo.png" alt="FoodwaGon logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#promos">Promos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#acceso" class="login-link"><span class="icon">👤</span> Acceso</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="location">
+          <span class="icon">📍</span>
+          <span><strong>Entregar a:</strong> Pablo V, domicilio 34223, multichat</span>
+        </div>
+        <h1>¡Bienvenido a FoodwaGon!</h1>
+        <p>Comida rápida, fresca y deliciosa, directo a tu puerta.</p>
+        <div class="search">
+          <span class="icon">🔍</span>
+          <input type="text" placeholder="Buscar comida">
+        </div>
+      </section>
+
+      <!-- Promociones -->
+      <section id="promos" class="promo-banner">
+        <h2>🔥 Promoción del día: 2x1 en Hamburguesas Clásicas 🔥</h2>
+        <a href="#menu" class="btn">¡Pídelo ahora!</a>
+      </section>
+
+      <!-- Menú destacado -->
+      <section id="menu" class="cards-section">
+        <h2>Menú Destacado</h2>
+        <div class="cards">
+          <div class="card">
+            <img src="img/hamburguesas-saludables.jpg" alt="Hamburguesa">
+            <h3>Hamburguesa</h3>
+            <p>Deliciosa hamburguesa con queso y vegetales frescos.</p>
+            <a href="hamburguesa.html" class="btn">Ver más</a>
+          </div>
+          <div class="card">
+            <img src="img/perro.png" alt="Perro caliente">
+            <h3>Perro Caliente</h3>
+            <p>Perro caliente con salchicha premium y salsas especiales.</p>
+            <a href="perros.html" class="btn">Ver más</a>
+          </div>
+          <div class="card">
+            <img src="img/salchipapa.png" alt="Salchipapa">
+            <h3>Salchipapa</h3>
+            <p>Papas fritas con salchicha y acompañamientos.</p>
+            <a href="salchipapa.html" class="btn">Ver más</a>
+          </div>
+          <div class="card">
+            <img src="https://mestredosdrinks.com/es/wp-content/uploads/2025/01/bebidas-con-sake-muy-sabrosas-aprende-esta-receta-especial.jpg" alt="Bebida">
+            <h3>Bebida</h3>
+            <p>Refrescante bebida para acompañar tu comida.</p>
+            <a href="bebida.html" class="btn">Ver más</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonios -->
+      <section id="testimonios" class="testimonials-section">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-carousel">
+          <div class="testimonial active">
+            <p>"¡La mejor hamburguesa que he probado! Entrega rápida y caliente."</p>
+            <span>- Ana G.</span>
+          </div>
+          <div class="testimonial">
+            <p>"El servicio es excelente y la comida siempre llega fresca."</p>
+            <span>- Carlos M.</span>
+          </div>
+          <div class="testimonial">
+            <p>"¡Amo las promociones! Siempre encuentro algo nuevo para probar."</p>
+            <span>- Laura P.</span>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="prev">‹</button>
+          <button class="next">›</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 FoodwaGon. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+  <!-- Script para partículas y carousel -->
+  <script src="particles.js"></script>
+  <script src="carousel.js"></script>
+</body>
+</html>

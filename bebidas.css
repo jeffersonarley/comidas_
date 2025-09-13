@@ -1,0 +1,336 @@
+:root {
+  --bg-main: #181a20;
+  --bg-card: #23262f;
+  --accent: #ffb347;
+  --text-main: #f4f4f4;
+  --text-muted: #b0b3b8;
+  --btn-bg: #ffb347;
+  --btn-hover: #ff8800;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  background: transparent;
+  animation: fadeInDown 1s;
+}
+header h1 {
+  color: var(--accent);
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+header img {
+  height: 100px;
+  filter: drop-shadow(0 2px 12px #000a);
+  margin-top: 0.5rem;
+  animation: popIn 1.2s;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0 2px 12px #000a);
+  margin-top: 0.5rem;
+  animation: popIn 1.2s;
+}
+
+/* Intro */
+.intro {
+  background: var(--bg-card);
+  margin: 0 auto 2rem auto;
+  max-width: 1000px;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  animation: fadeIn 1.2s;
+}
+.intro h2 {
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+  font-size: 1.5rem;
+}
+.intro p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Productos */
+.productos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem auto 2.5rem auto;
+  max-width: 900px;
+  animation: fadeInUp 1.2s;
+}
+.producto {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  text-align: center;
+  width: 220px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1.2s;
+}
+.producto:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(255,179,71,0.18);
+}
+.producto img {
+  width: 90px;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px #fff5, 0 2px 8px #0006;
+  background: #fff;
+  object-fit: cover;
+  /* Las imágenes se ven claras y resaltadas */
+  filter: brightness(1.08) contrast(1.08);
+  transition: transform 0.3s;
+}
+.producto:hover img {
+  transform: scale(1.08) rotate(-5deg);
+}
+.producto h3 {
+  color: var(--accent);
+  margin: 0.5rem 0 0.7rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+}
+.producto p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+.producto .precio {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.5rem 1rem 1rem 1rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  margin: 2rem auto 0 auto;
+  max-width: 900px;
+  box-shadow: var(--shadow);
+  font-size: 1rem;
+  animation: fadeIn 1.5s;
+}
+
+
+/* Contenedor de productos en 3 columnas */
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 🔥 3 columnas */
+  gap: 2rem;
+  margin: 2rem auto 2.5rem auto;
+  max-width: 1000px; /* más ancho para que quepan bien */
+  animation: fadeInUp 1.2s;
+}
+
+/* Cada producto */
+.producto {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeInUp 1.2s;
+}
+
+.producto {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  text-align: center;
+  width: 250px; /* un poco más ancho para que quepa bien */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* empuja precio al final */
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1.2s;
+}
+
+.producto:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(255,179,71,0.18);
+}
+
+/* 🔥 Ajuste de imágenes uniformes */
+.producto img {
+  width: 100%;
+  height: 160px; /* tamaño uniforme */
+  object-fit: cover; /* recorta sin deformar */
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px #fff5, 0 2px 8px #0006;
+  background: #fff;
+  filter: brightness(1.08) contrast(1.08);
+  transition: transform 0.3s;
+}
+
+.producto:hover img {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+.producto h3 {
+  color: var(--accent);
+  margin: 0.5rem 0 0.7rem 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  min-height: 2.5rem; /* asegura misma altura de títulos */
+}
+
+.producto p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.producto .precio {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: auto; /* empuja al final del card */
+}
+/* Header logo */
+header img {
+  height: 200px;   /* antes 70px, ahora más grande */
+  max-width: 100%; /* evita que se deforme en pantallas pequeñas */
+  filter: drop-shadow(0 2px 12px #000a);
+  margin-top: 0.8rem;
+  animation: popIn 1.2s;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, var(--bg-card) 0%, #1c1f27 100%);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem 1rem 1.5rem 1rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  margin: 2rem auto 0 auto;
+  max-width: 1000px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.4), inset 0 2px 6px rgba(255,179,71,0.08);
+  font-size: 1rem;
+  line-height: 1.6;
+  animation: fadeIn 1.5s;
+  position: relative;
+}
+
+/* Línea decorativa */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.6;
+}
+
+/* Texto principal */
+.footer p {
+  margin: 0.4rem 0;
+}
+
+/* Efecto en íconos de contacto */
+.footer p:first-child {
+  color: var(--accent);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(255,179,71,0.3);
+}
+
+
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98);}
+  to { opacity: 1; transform: scale(1);}
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.7);}
+  80% { opacity: 1; transform: scale(1.1);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .productos {
+    gap: 1.2rem;
+  }
+  .producto {
+    width: 180px;
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  header img {
+    height: 50px;
+  }
+}
+@media (max-width: 600px) {
+  .productos {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  .intro {
+    padding: 1.2rem 0.7rem;
+  }
+  .producto {
+    width: 90vw;
+    max-width: 320px;
+  }
+  footer {
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem 0.7rem 0.5rem;
+  }
+}
+/* Ajuste responsive */
+@media (max-width: 600px) {
+  header img {
+    height: 80px; /* más pequeño en pantallas chicas */
+  }
+}
+
