@@ -188,7 +188,6 @@ nav a:hover, .login-link:hover {
   text-align: center;
   width: 100%;
   max-width: 280px;
-  height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
