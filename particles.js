@@ -7,6 +7,27 @@ function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
+
+
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    nav.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+  });
+
+  // Cierra el menú al hacer clic en un enlace (opcional)
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      nav.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+
+
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
@@ -41,3 +62,5 @@ function animateParticles() {
   requestAnimationFrame(animateParticles);
 }
 animateParticles();
+
+

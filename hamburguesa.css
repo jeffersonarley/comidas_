@@ -17,6 +17,55 @@ body {
   min-height: 100vh;
 }
 
+
+
+
+.navegacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0 1.5rem 0;
+  background: transparent;
+}
+#hola{
+  padding-right: 400px;
+}
+#hoda{
+  padding-left: 400px;
+}
+.logo img {
+  height: 110px;
+  filter: drop-shadow(0 2px 8px #0008);
+  transition: transform 0.3s;
+  
+}
+.logo img:hover {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+nav a:hover, .login-link:hover {
+  color: var(--accent);
+}
+
+
+
+
+
+
 /* Header */
 header {
   text-align: center;
