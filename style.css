@@ -37,9 +37,10 @@ html, body {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 2rem 0 1.5rem 0;
   background: transparent;
+  gap: 400px;
 }
 
 .logo img {
