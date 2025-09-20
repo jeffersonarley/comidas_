@@ -9,20 +9,26 @@
 </head>
 <body>
 
+  <canvas id="particles-bg"></canvas>
+
   <header class="navegacion">
-      <div class="logo" id="hoda">
-        <img src="img/logo.png" alt="FoodwaGon logo">
-      </div>
-      <nav>
-        <ul id="hola">
-          <li><a href="index.html">Menú</a></li>
-          <li><a href="perros.html">Perros</a></li>
-          <li><a href="hamburguesa.html">Hamburguesas</a></li>
-          <li><a href="bebidas.html">Bebidas</a></li>
-          
-        </ul>
-      </nav>
-    </header>
+    <div class="logo" id="hoda">
+      <img src="img/logo.png" alt="FoodwaGon logo">
+    </div>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <ul id="hola">
+        <li><a href="index.html">Menú</a></li>
+        <li><a href="hamburguesa.html">Hamburguesas</a></li>
+        <li><a href="perros.html">Perros</a></li>
+        <li><a href="bebidas.html">Bebidas</a></li>
+      </ul>
+    </nav>
+  </header>
   
    <header>
     <h1>Salchipapas</h1>
@@ -89,7 +95,90 @@
     <p>&copy; 2025 JORLAN</p>
   </footer>
 
-      
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navUl = document.getElementById('hola');
+
+  menuToggle.addEventListener('click', () => {
+    navUl.classList.toggle('open');
+    menuToggle.classList.toggle('active');
+  });
+
+  // Opcional: Cierra el menú al hacer clic en un enlace
+  navUl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navUl.classList.remove('open');
+      menuToggle.classList.remove('active');
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+  // particles.js
+const canvas = document.getElementById('particles-bg');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+
+
+
+
+
+
+
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function createParticles() {
+  particles = [];
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5,
+      color: `rgba(255,179,71,${Math.random() * 0.5 + 0.2})`
+    });
+  }
+}
+createParticles();
+window.addEventListener('resize', createParticles);
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let p of particles) {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+    ctx.fillStyle = p.color;
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  }
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+
+
+
+
+</script>
+           
 
 </body>
 </html>

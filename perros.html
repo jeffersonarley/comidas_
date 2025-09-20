@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -9,20 +9,27 @@
 </head>
 <body>
 
+  <canvas id="particles-bg"></canvas>
+
   <header class="navegacion">
-      <div class="logo" id="hoda">
-        <img src="img/logo.png" alt="FoodwaGon logo">
-      </div>
-      <nav>
-        <ul id="hola">
-          <li><a href="index.html">Menú</a></li>
-          <li><a href="hamburguesa.html">Hamburguesas</a></li>
-          <li><a href="salshipapa.html">Salchipapas</a></li>
-          <li><a href="bebidas.html">Bebidas</a></li>
-          
-        </ul>
-      </nav>
-    </header>
+    <div class="logo" id="hoda">
+      <img src="img/logo.png" alt="FoodwaGon logo">
+    </div>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <ul id="hola">
+        <li><a href="index.html">Menú</a></li>
+        <li><a href="hamburguesa.html">Hamburguesas</a></li>
+        <li><a href="salshipapa.html">Salchipapas</a></li>
+        <li><a href="bebidas.html">Bebidas</a></li>
+      </ul>
+    </nav>
+  </header>
+
   
    <header>
     <h1>Perros</h1>
@@ -47,14 +54,14 @@
 
   <div class="card">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv_n0ZgDIltNu5fbeEJRgu5z_UreRoKkM73ZI7WFdFl1rGVZ5NoP5flgUc_5IdtBH5Vzw&usqp=CAU" alt="Salchipapa BBQ">
-    <h3>mixto</h3>
+    <h3>Mixto</h3>
     <p>Combinación de res y cerdo, con tocineta, queso y salsas.</p>
     <a href="#" class="btn">$20.000</a>
   </div>
 
   <div class="card">
     <img src=" https://tofuu.getjusto.com/orioneat-local/resized2/obNDsPphRwxpz93Dt-2400-x.webp" alt="Salchipapa Mixta">
-    <h3>cerdo</h3>
+    <h3>Cerdo</h3>
     <p>Combinación de res y cerdo,con tocineta, queso y salsas.</p>
     <a href="#" class="btn">$27.000</a>
   </div>
@@ -91,6 +98,89 @@
     <p>&copy; 2025 JORLAN</p>
   </footer>
 
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navUl = document.getElementById('hola');
+
+  menuToggle.addEventListener('click', () => {
+    navUl.classList.toggle('open');
+    menuToggle.classList.toggle('active');
+  });
+
+  // Opcional: Cierra el menú al hacer clic en un enlace
+  navUl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navUl.classList.remove('open');
+      menuToggle.classList.remove('active');
+    });
+  });
+
+
+
+
+
+
+
+
+
+
+  // particles.js
+const canvas = document.getElementById('particles-bg');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+
+
+
+
+
+
+
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function createParticles() {
+  particles = [];
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5,
+      color: `rgba(255,179,71,${Math.random() * 0.5 + 0.2})`
+    });
+  }
+}
+createParticles();
+window.addEventListener('resize', createParticles);
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let p of particles) {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+    ctx.fillStyle = p.color;
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  }
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+
+
+
+
+</script>
       
 
 </body>
