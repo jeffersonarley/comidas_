@@ -348,7 +348,7 @@ nav a:hover, .login-link:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .cards {
     gap: 1.2rem;
   }
@@ -357,7 +357,7 @@ nav a:hover, .login-link:hover {
     padding: 1.2rem 1rem 1rem 1rem;
   }
   .logo img {
-    height: 40px;
+    height: 70px;
   }
 }
 @media (max-width: 600px) {
@@ -392,7 +392,7 @@ nav a:hover, .login-link:hover {
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 44px;
+  
   height: 44px;
   background: var(--bg-card);
   border: none;
@@ -421,7 +421,7 @@ nav a:hover, .login-link:hover {
 }
 
 /* Responsive nav */
-@media (max-width: 900px) {
+@media (max-width: 1067px) {
   .menu-toggle {
     display: flex;
   }
@@ -481,7 +481,7 @@ nav a:hover, .login-link:hover {
 }
 
 /* Móviles ≤600px → 1 columna */
-@media (max-width: 600px) {
+@media (max-width: 890px) {
   .cards {
     grid-template-columns: 1fr;
   }
@@ -502,17 +502,18 @@ nav a:hover, .login-link:hover {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media (max-width: 1339px) and (min-width: 600px) {
+@media (max-width: 1339px) and (min-width: 855px) {
    .cards {
     grid-template-columns: repeat(2, 1fr);
     padding: 159px;
   
   }
 }
-@media (max-width: 1009px) and (min-width: 601px) {
+@media (max-width: 1009px) and (min-width: 856px) {
    .cards {
     grid-template-columns: repeat(1fr);
     padding: 159px;
   
   }
 }
+

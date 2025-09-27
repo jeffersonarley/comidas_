@@ -372,6 +372,7 @@ header img {
 @media (max-width: 600px) {
   .cards {
     grid-template-columns: 1fr;
+    justify-content: center;
   }
   .card {
     width: 90vw;
